@@ -638,4 +638,469 @@ footer strong {
         min-height: calc(100vh - 140px);
     }
 
-    .
+    .intro {
+        margin-bottom: 25px;
+    }
+
+    .intro .tag {
+        font-size: 9px;
+        padding: 7px 11px;
+    }
+
+    .intro h2 {
+        font-size: 27px;
+    }
+
+    .intro p {
+        font-size: 12px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-card {
+        padding: 23px 17px;
+        border-radius: 14px;
+    }
+
+    .search-title {
+        font-size: 16px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input-group input {
+        width: 100%;
+        height: 51px;
+        font-size: 13px;
+    }
+
+    .input-group button {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .result {
+        margin-top: 20px;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 21px 19px;
+    }
+
+    .result-header h3 {
+        font-size: 15px;
+    }
+
+    .result-body {
+        padding: 21px 18px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .detail {
+        padding: 13px 0;
+    }
+
+    .detail strong {
+        font-size: 13px;
+    }
+
+    .course-box {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .course-name {
+        font-size: 15px;
+    }
+
+    .grade {
+        padding: 10px 15px;
+    }
+
+    .result-footer {
+        flex-direction: column;
+        padding: 16px 18px;
+        line-height: 1.7;
+    }
+
+    footer {
+        padding: 16px 10px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:360px) {
+    .brand h1 {
+        font-size: 12px;
+    }
+
+    .brand p {
+        font-size: 8px;
+    }
+
+    .header-badge {
+        font-size: 6px;
+        padding: 6px;
+    }
+
+    .intro h2 {
+        font-size: 24px;
+    }
+
+    .search-card {
+        padding: 19px 14px;
+    }
+
+    .logo {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="brand">
+        <div class="logo">
+            <img src="haris.png" alt="Haris Institute Logo">
+        </div>
+        <div>
+            <h1>HARIS INSTITUTE</h1>
+            <p>Peshawar - Mardan - Rawalpindi</p>
+        </div>
+    </div>
+    <div class="header-badge">
+        OFFICIAL CERTIFICATE PORTAL
+    </div>
+</header>
+
+<main>
+    <section class="intro">
+        <div class="tag">
+            CERTIFICATE AUTHENTICATION SYSTEM
+        </div>
+        <h2>Verify Your Certificate</h2>
+        <p>
+            Enter your certificate number below to verify
+            your academic and professional credentials.
+        </p>
+    </section>
+
+    <section class="search-card">
+        <div class="search-title">
+            Certificate Verification
+        </div>
+        <div class="search-description">
+            Please enter your unique certificate number.
+        </div>
+
+        <form id="searchForm">
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="certificateNumber"
+                    placeholder="Enter Certificate Number"
+                    autocomplete="off"
+                    required
+                    maxlength="50"
+                    aria-label="Certificate Number"
+                >
+                <button type="submit" id="searchButton">
+                    VERIFY CERTIFICATE →
+                </button>
+            </div>
+        </form>
+
+        <div class="hint">
+            Sample Certificate Number: 512352
+        </div>
+
+        <div class="loading" id="loading" role="status" aria-live="polite">
+            <div class="loader"></div>
+            <h3>Verifying Certificate...</h3>
+            <p>Checking candidate records. Please wait.</p>
+        </div>
+
+        <div class="error" id="error" role="alert">
+            <div class="error-icon">⚠️</div>
+            <h3>Certificate Not Found</h3>
+            <p>
+                No certificate record was found with this number.
+                Please check your certificate number and try again.
+            </p>
+        </div>
+    </section>
+
+    <section class="result" id="result" aria-live="polite">
+        <div class="result-card">
+            <div class="result-header">
+                <div>
+                    <h3>Certificate Verification Result</h3>
+                    <p>Official Candidate Credentials</p>
+                </div>
+                <div class="status" id="status">
+                    VERIFIED
+                </div>
+            </div>
+
+            <div class="result-body">
+                <div class="section-heading">
+                    CANDIDATE INFORMATION
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail">
+                        <label>Candidate Name</label>
+                        <strong id="candidateName">---</strong>
+                    </div>
+                    <div class="detail">
+                        <label>Father's Name</label>
+                        <strong id="fatherName">---</strong>
+                    </div>
+                    <div class="detail">
+                        <label>Date of Birth</label>
+                        <strong id="dob">---</strong>
+                    </div>
+                    <div class="detail">
+                        <label>CNIC Number</label>
+                        <strong id="cnic">---</strong>
+                    </div>
+                    <div class="detail">
+                        <label>Certificate Number</label>
+                        <strong id="certNumber">---</strong>
+                    </div>
+                    <div class="detail">
+                        <label>Issue Date</label>
+                        <strong id="issueDate">---</strong>
+                    </div>
+                </div>
+
+                <div class="course-section">
+                    <div class="section-heading">
+                        CERTIFICATION DETAILS
+                    </div>
+                    <div class="course-box">
+                        <div>
+                            <div class="course-label">
+                                COMPLETED COURSE
+                            </div>
+                            <div class="course-name" id="course">
+                                ---
+                            </div>
+                        </div>
+                        <div class="grade">
+                            Grade: <span id="grade">---</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-footer">
+                <span>
+                    HARIS INSTITUTE | Official Records
+                </span>
+                <span id="verificationTime">
+                    Verification Time: ---
+                </span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2026 <strong>HARIS INSTITUTE</strong>.
+    Peshawar - Mardan - Rawalpindi.
+    All Rights Reserved.
+</footer>
+
+<script>
+/* ==========================================
+   ELEMENT REFERENCES
+========================================== */
+
+const searchForm = document.getElementById("searchForm");
+const certificateInput = document.getElementById("certificateNumber");
+const loading = document.getElementById("loading");
+const result = document.getElementById("result");
+const error = document.getElementById("error");
+const searchButton = document.getElementById("searchButton");
+
+let verificationTimer = null;
+
+/* ==========================================
+   DISPLAY STUDENT INFORMATION
+========================================== */
+
+function displayValue(id, value) {
+    document.getElementById(id).textContent = value || "---";
+}
+
+/* ==========================================
+   UPDATE CERTIFICATE STATUS
+========================================== */
+
+function updateStatus(value) {
+    const statusElement = document.getElementById("status");
+    const statusValue = String(value || "Unknown").toLowerCase();
+
+    statusElement.className = "status";
+
+    if (statusValue === "verified") {
+        statusElement.classList.add("verified");
+        statusElement.textContent = "✓ VERIFIED";
+    } else if (statusValue === "pending") {
+        statusElement.classList.add("pending");
+        statusElement.textContent = "◷ PENDING";
+    } else if (statusValue === "revoked") {
+        statusElement.classList.add("revoked");
+        statusElement.textContent = "✕ REVOKED";
+    } else {
+        statusElement.classList.add("unknown");
+        statusElement.textContent = statusValue.toUpperCase();
+    }
+}
+
+/* ==========================================
+   RESET SEARCH INTERFACE
+========================================== */
+
+function resetSearchInterface() {
+    clearTimeout(verificationTimer);
+    loading.classList.remove("active");
+    error.classList.remove("active");
+    result.classList.remove("active");
+
+    searchButton.disabled = false;
+    searchButton.textContent = "VERIFY CERTIFICATE →";
+}
+
+/* ==========================================
+   MAIN CERTIFICATE SEARCH (FETCHES database.json)
+========================================== */
+
+searchForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const number = certificateInput.value.trim();
+
+    if (!number) {
+        certificateInput.focus();
+        return;
+    }
+
+    // Reset previous search
+    resetSearchInterface();
+
+    // Show loading animation
+    loading.classList.add("active");
+    searchButton.disabled = true;
+    searchButton.textContent = "VERIFYING...";
+
+    try {
+        // Fetch external database JSON file
+        const response = await fetch('database.json');
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const certification = await response.json();
+
+        // Simulated verification delay combined with network request
+        verificationTimer = setTimeout(function() {
+            loading.classList.remove("active");
+            searchButton.disabled = false;
+            searchButton.textContent = "VERIFY CERTIFICATE →";
+
+            // Find candidate record
+            const candidate = certification[number];
+
+            // Show error if record does not exist
+            if (!candidate) {
+                error.classList.add("active");
+                error.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+                return;
+            }
+
+            // Display candidate information
+            displayValue("candidateName", candidate.candidateName);
+            displayValue("fatherName", candidate.fatherName);
+            displayValue("dob", candidate.dob);
+            displayValue("cnic", candidate.cnic);
+            displayValue("certNumber", number);
+            displayValue("issueDate", candidate.issueDate);
+            displayValue("course", candidate.course);
+            displayValue("grade", candidate.grade);
+
+            // Update certificate status
+            updateStatus(candidate.status);
+
+            // Display current verification date and time
+            document.getElementById("verificationTime").textContent =
+                "Checked on: " + new Date().toLocaleString();
+
+            // Display result
+            result.classList.add("active");
+
+            // Scroll to result
+            setTimeout(function() {
+                result.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+            }, 180);
+
+        }, 800);
+
+    } catch (err) {
+        loading.classList.remove("active");
+        searchButton.disabled = false;
+        searchButton.textContent = "VERIFY CERTIFICATE →";
+        
+        error.classList.add("active");
+        error.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    }
+});
+
+/* ==========================================
+   CLEAR PREVIOUS RESULTS WHEN TYPING
+========================================== */
+
+certificateInput.addEventListener("input", function() {
+    resetSearchInterface();
+});
+</script>
+
+</body>
+</html>
