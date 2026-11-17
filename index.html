@@ -1,0 +1,1200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071a3d">
+
+<title>Haris Institute | Certificate Verification</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #071a3d;
+    --navy2: #102c59;
+    --gold: #f5c542;
+    --gold-light: #fff6d8;
+    --white: #fff;
+    --bg: #f3f6fb;
+    --text: #1b2942;
+    --muted: #778196;
+    --green: #159b65;
+    --red: #dc3545;
+    --shadow: 0 15px 45px rgba(7,26,61,.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, #e9effb 0, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+.header {
+    min-height: 88px;
+    padding: 14px 6%;
+    background: linear-gradient(115deg, #06142f, #102c59);
+    border-bottom: 4px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 22px #071a3d18;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #0003;
+    animation: logoEnter .8s ease both;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3px;
+}
+
+.brand h1 {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: .8px;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #d6deec;
+    margin-top: 5px;
+}
+
+.header-badge {
+    padding: 10px 16px;
+    border: 1px solid #ffffff35;
+    border-radius: 30px;
+    font-size: 10px;
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: .6px;
+    white-space: nowrap;
+}
+
+/* MAIN */
+
+main {
+    min-height: calc(100vh - 150px);
+    padding: 55px 18px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 32px;
+    animation: fadeDown .8s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.intro .tag {
+    color: #987100;
+    background: var(--gold-light);
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.intro h2 {
+    color: var(--navy);
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 900;
+    letter-spacing: -.8px;
+}
+
+.intro p {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* SEARCH CARD */
+
+.search-card {
+    width: 100%;
+    max-width: 690px;
+    background: white;
+    padding: 32px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    border: 1px solid #e8ebf1;
+    animation: fadeUp .9s cubic-bezier(.2,.8,.2,1) both;
+    transition: box-shadow .3s ease, transform .3s ease;
+}
+
+.search-card:hover {
+    box-shadow: 0 20px 55px rgba(7,26,61,.12);
+}
+
+.search-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.search-description {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.input-group {
+    display: flex;
+    gap: 11px;
+}
+
+.input-group input {
+    flex: 1;
+    min-width: 0;
+    height: 53px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid #dce1eb;
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: border-color .25s, box-shadow .25s;
+}
+
+.input-group input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px #f5c54225;
+}
+
+.input-group button {
+    border: none;
+    background: linear-gradient(120deg, var(--navy), var(--navy2));
+    color: white;
+    padding: 0 23px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform .25s, box-shadow .25s, background .25s;
+    white-space: nowrap;
+    min-height: 53px;
+}
+
+.input-group button:hover:not(:disabled) {
+    background: linear-gradient(120deg, #b58a09, #d4a91c);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px #b58a0930;
+}
+
+.input-group button:active:not(:disabled) {
+    transform: scale(.97);
+}
+
+.input-group button:disabled {
+    opacity: .7;
+    cursor: wait;
+    transform: none;
+}
+
+.hint {
+    margin-top: 13px;
+    font-size: 11px;
+    color: #9099a9;
+}
+
+/* LOADING */
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 38px 10px 15px;
+    animation: fadeIn .4s ease;
+}
+
+.loading.active {
+    display: block;
+}
+
+.loader {
+    width: 49px;
+    height: 49px;
+    border: 4px solid #e9edf4;
+    border-top-color: var(--gold);
+    border-right-color: var(--navy);
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    animation: spin .85s linear infinite;
+}
+
+.loading h3 {
+    font-size: 15px;
+    color: var(--navy);
+}
+
+.loading p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* RESULT */
+
+.result {
+    display: none;
+    width: 100%;
+    max-width: 850px;
+    margin-top: 28px;
+}
+
+.result.active {
+    display: block;
+    animation: resultEnter .65s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.result-card {
+    background: white;
+    border: 1px solid #e7eaf0;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.result-header {
+    background: linear-gradient(110deg, var(--navy), var(--navy2));
+    color: white;
+    padding: 24px 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.result-header h3 {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.result-header p {
+    font-size: 11px;
+    color: #d2dced;
+    margin-top: 7px;
+}
+
+.status {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    white-space: nowrap;
+    animation: statusAppear .5s .2s both;
+}
+
+.status.verified {
+    background: #d7f8e9;
+    color: #087c4c;
+}
+
+.status.pending {
+    background: #fff0c5;
+    color: #956700;
+}
+
+.status.revoked {
+    background: #ffe0e3;
+    color: #c32132;
+}
+
+.status.unknown {
+    background: #e8ebf1;
+    color: #525d70;
+}
+
+.result-body {
+    padding: 30px;
+}
+
+.section-heading {
+    color: #a17a00;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    margin-bottom: 15px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 0 28px;
+}
+
+.detail {
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f4;
+    animation: fadeUp .45s both;
+}
+
+.detail:nth-child(2) { animation-delay: .04s; }
+.detail:nth-child(3) { animation-delay: .08s; }
+.detail:nth-child(4) { animation-delay: .12s; }
+.detail:nth-child(5) { animation-delay: .16s; }
+.detail:nth-child(6) { animation-delay: .20s; }
+
+.detail label {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.detail strong {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+/* COURSE */
+
+.course-section {
+    margin-top: 30px;
+}
+
+.course-box {
+    background: linear-gradient(120deg, #f8f9fc, #f3f6fb);
+    border: 1px solid #e8ebf0;
+    padding: 22px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.course-name {
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 900;
+    overflow-wrap: anywhere;
+}
+
+.course-label {
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.grade {
+    background: var(--gold-light);
+    color: #8d6900;
+    border: 1px solid #f4dc87;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.result-footer {
+    border-top: 1px solid #e9edf3;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+/* ERROR */
+
+.error {
+    display: none;
+    text-align: center;
+    padding: 30px 15px;
+    background: #fff5f5;
+    border: 1px solid #ffd9dc;
+    border-radius: 12px;
+    margin-top: 22px;
+    animation: errorEnter .4s ease both;
+}
+
+.error.active {
+    display: block;
+}
+
+.error-icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.error h3 {
+    color: var(--red);
+    font-size: 16px;
+}
+
+.error p {
+    color: #7d6266;
+    font-size: 12px;
+    margin-top: 9px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--navy);
+    color: #d5deec;
+    text-align: center;
+    padding: 19px 12px;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* ANIMATIONS */
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes resultEnter {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(.99);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes errorEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes statusAppear {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: scale(.8) rotate(-8deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* TABLET */
+
+@media(max-width:768px) {
+    main {
+        padding: 42px 16px;
+    }
+
+    .search-card {
+        padding: 26px;
+    }
+
+    .result-body {
+        padding: 24px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+    .header {
+        min-height: 75px;
+        padding: 12px 14px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand h1 {
+        font-size: 15px;
+        letter-spacing: .4px;
+    }
+
+    .brand p {
+        font-size: 9px;
+    }
+
+    .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .header-badge {
+        font-size: 7px;
+        padding: 7px 9px;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    main {
+        padding: 37px 12px;
+        min-height: calc(100vh - 140px);
+    }
+
+    .intro {
+        margin-bottom: 25px;
+    }
+
+    .intro .tag {
+        font-size: 9px;
+        padding: 7px 11px;
+    }
+
+    .intro h2 {
+        font-size: 27px;
+    }
+
+    .intro p {
+        font-size: 12px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-card {
+        padding: 23px 17px;
+        border-radius: 14px;
+    }
+
+    .search-title {
+        font-size: 16px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input-group input {
+        width: 100%;
+        height: 51px;
+        font-size: 13px;
+    }
+
+    .input-group button {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .result {
+        margin-top: 20px;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 21px 19px;
+    }
+
+    .result-header h3 {
+        font-size: 15px;
+    }
+
+    .result-body {
+        padding: 21px 18px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .detail {
+        padding: 13px 0;
+    }
+
+    .detail strong {
+        font-size: 13px;
+    }
+
+    .course-box {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .course-name {
+        font-size: 15px;
+    }
+
+    .grade {
+        padding: 10px 15px;
+    }
+
+    .result-footer {
+        flex-direction: column;
+        padding: 16px 18px;
+        line-height: 1.7;
+    }
+
+    footer {
+        padding: 16px 10px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:360px) {
+    .brand h1 {
+        font-size: 12px;
+    }
+
+    .brand p {
+        font-size: 8px;
+    }
+
+    .header-badge {
+        font-size: 6px;
+        padding: 6px;
+    }
+
+    .intro h2 {
+        font-size: 24px;
+    }
+
+    .search-card {
+        padding: 19px 14px;
+    }
+
+    .logo {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="brand">
+
+        <!-- Keep haris.png in the same folder as this HTML file -->
+        <div class="logo">
+            <img src="haris.png" alt="Haris Institute Logo">
+        </div>
+
+        <div>
+            <h1>HARIS INSTITUTE</h1>
+            <p>Peshawar - Mardan - Rawalpindi</p>
+        </div>
+
+    </div>
+
+    <div class="header-badge">
+        OFFICIAL CERTIFICATE PORTAL
+    </div>
+
+</header>
+
+<main>
+
+    <section class="intro">
+
+        <div class="tag">
+            CERTIFICATE AUTHENTICATION SYSTEM
+        </div>
+
+        <h2>Verify Your Certificate</h2>
+
+        <p>
+            Enter your certificate number below to verify
+            your academic and professional credentials.
+        </p>
+
+    </section>
+
+    <section class="search-card">
+
+        <div class="search-title">
+            Certificate Verification
+        </div>
+
+        <div class="search-description">
+            Please enter your unique certificate number.
+        </div>
+
+        <form id="searchForm">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    id="certificateNumber"
+                    placeholder="Enter Certificate Number"
+                    autocomplete="off"
+                    required
+                    maxlength="50"
+                    aria-label="Certificate Number"
+                >
+
+                <button type="submit" id="searchButton">
+                    VERIFY CERTIFICATE →
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="hint">
+            Sample Certificate Number: 123456
+        </div>
+
+        <div class="loading" id="loading" role="status" aria-live="polite">
+            <div class="loader"></div>
+            <h3>Verifying Certificate...</h3>
+            <p>Checking candidate records. Please wait.</p>
+        </div>
+
+        <div class="error" id="error" role="alert">
+
+            <div class="error-icon">⚠️</div>
+
+            <h3>Certificate Not Found</h3>
+
+            <p>
+                No certificate record was found with this number.
+                Please check your certificate number and try again.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="result" id="result" aria-live="polite">
+
+        <div class="result-card">
+
+            <div class="result-header">
+
+                <div>
+                    <h3>Certificate Verification Result</h3>
+                    <p>Official Candidate Credentials</p>
+                </div>
+
+                <div class="status" id="status">
+                    VERIFIED
+                </div>
+
+            </div>
+
+            <div class="result-body">
+
+                <div class="section-heading">
+                    CANDIDATE INFORMATION
+                </div>
+
+                <div class="details-grid">
+
+                    <div class="detail">
+                        <label>Candidate Name</label>
+                        <strong id="candidateName">---</strong>
+                    </div>
+
+                    <div class="detail">
+                        <label>Father's Name</label>
+                        <strong id="fatherName">---</strong>
+                    </div>
+
+                    <div class="detail">
+                        <label>Date of Birth</label>
+                        <strong id="dob">---</strong>
+                    </div>
+
+                    <div class="detail">
+                        <label>CNIC Number</label>
+                        <strong id="cnic">---</strong>
+                    </div>
+
+                    <div class="detail">
+                        <label>Certificate Number</label>
+                        <strong id="certNumber">---</strong>
+                    </div>
+
+                    <div class="detail">
+                        <label>Issue Date</label>
+                        <strong id="issueDate">---</strong>
+                    </div>
+
+                </div>
+
+                <div class="course-section">
+
+                    <div class="section-heading">
+                        CERTIFICATION DETAILS
+                    </div>
+
+                    <div class="course-box">
+
+                        <div>
+                            <div class="course-label">
+                                COMPLETED COURSE
+                            </div>
+
+                            <div class="course-name" id="course">
+                                ---
+                            </div>
+                        </div>
+
+                        <div class="grade">
+                            Grade: <span id="grade">---</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="result-footer">
+
+                <span>
+                    HARIS INSTITUTE | Official Records
+                </span>
+
+                <span id="verificationTime">
+                    Verification Time: ---
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 <strong>HARIS INSTITUTE</strong>.
+    Peshawar - Mardan - Rawalpindi.
+    All Rights Reserved.
+</footer>
+
+<script>
+
+/* ==========================================
+   HARIS INSTITUTE CERTIFICATION DATABASE
+
+   ADD / EDIT / REMOVE STUDENT RECORDS HERE
+
+   Each certificate number must be unique.
+========================================== */
+
+const certification = {
+
+    "512352": {
+        candidateName: "Jawad Ahmed",
+        fatherName: "Parvaiz Iqbal",
+        dob: "27-02-2004",
+        cnic: "37405-1234567-1",
+        course: "Microsoft Professional",
+        grade: "A",
+        issueDate: "10-10-2026",
+        status: "Verified"
+    },
+
+
+};
+
+
+/* ==========================================
+   ELEMENT REFERENCES
+========================================== */
+
+const searchForm = document.getElementById("searchForm");
+const certificateInput = document.getElementById("certificateNumber");
+const loading = document.getElementById("loading");
+const result = document.getElementById("result");
+const error = document.getElementById("error");
+const searchButton = document.getElementById("searchButton");
+
+let verificationTimer = null;
+
+
+/* ==========================================
+   DISPLAY STUDENT INFORMATION
+========================================== */
+
+function displayValue(id, value) {
+
+    document.getElementById(id).textContent =
+        value || "---";
+
+}
+
+
+/* ==========================================
+   UPDATE CERTIFICATE STATUS
+========================================== */
+
+function updateStatus(value) {
+
+    const statusElement = document.getElementById("status");
+
+    const statusValue = String(value || "Unknown").toLowerCase();
+
+    statusElement.className = "status";
+
+    if (statusValue === "verified") {
+
+        statusElement.classList.add("verified");
+        statusElement.textContent = "✓ VERIFIED";
+
+    } else if (statusValue === "pending") {
+
+        statusElement.classList.add("pending");
+        statusElement.textContent = "◷ PENDING";
+
+    } else if (statusValue === "revoked") {
+
+        statusElement.classList.add("revoked");
+        statusElement.textContent = "✕ REVOKED";
+
+    } else {
+
+        statusElement.classList.add("unknown");
+        statusElement.textContent = statusValue.toUpperCase();
+
+    }
+
+}
+
+
+/* ==========================================
+   RESET SEARCH INTERFACE
+========================================== */
+
+function resetSearchInterface() {
+
+    clearTimeout(verificationTimer);
+
+    loading.classList.remove("active");
+    error.classList.remove("active");
+    result.classList.remove("active");
+
+    searchButton.disabled = false;
+    searchButton.textContent = "VERIFY CERTIFICATE →";
+
+}
+
+
+/* ==========================================
+   MAIN CERTIFICATE SEARCH
+========================================== */
+
+searchForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const number = certificateInput.value.trim();
+
+    if (!number) {
+        certificateInput.focus();
+        return;
+    }
+
+    // Reset previous search
+    resetSearchInterface();
+
+    // Show loading animation
+    loading.classList.add("active");
+
+    searchButton.disabled = true;
+    searchButton.textContent = "VERIFYING...";
+
+    // Simulated verification delay
+    verificationTimer = setTimeout(function() {
+
+        loading.classList.remove("active");
+
+        searchButton.disabled = false;
+        searchButton.textContent = "VERIFY CERTIFICATE →";
+
+        // Find candidate record
+        const candidate = certification[number];
+
+        // Show error if record does not exist
+        if (!candidate) {
+
+            error.classList.add("active");
+
+            error.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+            return;
+
+        }
+
+        // Display candidate information
+        displayValue("candidateName", candidate.candidateName);
+        displayValue("fatherName", candidate.fatherName);
+        displayValue("dob", candidate.dob);
+        displayValue("cnic", candidate.cnic);
+        displayValue("certNumber", number);
+        displayValue("issueDate", candidate.issueDate);
+        displayValue("course", candidate.course);
+        displayValue("grade", candidate.grade);
+
+        // Update certificate status
+        updateStatus(candidate.status);
+
+        // Display current verification date and time
+        document.getElementById("verificationTime").textContent =
+            "Checked on: " + new Date().toLocaleString();
+
+        // Display result
+        result.classList.add("active");
+
+        // Scroll to result
+        setTimeout(function() {
+
+            result.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }, 180);
+
+    }, 1200);
+
+});
+
+
+/* ==========================================
+   CLEAR PREVIOUS RESULTS WHEN TYPING
+========================================== */
+
+certificateInput.addEventListener("input", function() {
+
+    resetSearchInterface();
+
+});
+
+</script>
+
+</body>
+</html>
