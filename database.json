@@ -8,5 +8,15 @@
     "grade": "A",
     "issueDate": "10-10-2026",
     "status": "Verified"
-  }
+  },
+  "512352": {
+    "candidateName": "Hassam Ul Hassan",
+    "fatherName": "Tasawar Hussain",
+    "dob": "13-08-2004",
+    "cnic": "37201-7248633-1",
+    "course": "AutoCAD (Civil) Professional",
+    "grade": "A",
+    "issueDate": "15-11-2026",
+    "status": "Verified"
+  },
 }
